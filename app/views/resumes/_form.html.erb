@@ -1,0 +1,85 @@
+
+  <%= form_with(model: resume, class: "contents") do |form| %>
+    <% if resume.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+        <ul>
+          <% resume.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="my-5">
+      <%= form.label :first_name , class: "fw-bold form-label m-3"%>
+      <%= form.text_field :first_name, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"First Name" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :last_name, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :last_name, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Last Name" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :email, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :email, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Email Id" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :phone, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :phone, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Phone" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :linkedin, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :linkedin, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Linked In" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :github, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :github, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Github Link" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :address, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :address, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Address" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :educational_qualifications, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :educational_qualifications, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" , placeholder:"Educational Qualifications"%>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :skills, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :skills, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Skills" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :cirtificates, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :cirtificates, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",placeholder:"Cirtificates" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :projects, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :projects, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Projects" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :experience, class: "fw-bold form-label m-3" %>
+      <%= form.text_field :experience, class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder:"Experience" %>
+    </div>
+
+    <div class="my-5">
+      <% form.label :user_id, class: "fw-bold form-label m-3" %>
+      <%= form.number_field :user_id, id: :resume_user_id  ,class: "form-control  ml-3 mr-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", value: current_user.id, type: :hidden %>
+    </div>
+
+
+    <div class="inline">
+      <%= form.submit class: "btn btn-secondary rounded-lg py-2 px-4 text-white inline-block font-medium mb-2 cursor-pointer" %>
+    </div>
+  <% end %>
+

@@ -1,0 +1,69 @@
+<% if resume.user == current_user %>
+  <div class="table table-striped table-bordered table-hover px-5 py-5 mx-2 bg-dark bg-opacity-75 text-white" id="<%= dom_id resume %>">
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">First Name: </strong>
+      <%= resume.first_name %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Last Name: </strong>
+      <%= resume.last_name %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Email Id: </strong>
+      <%= resume.email %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Phone: </strong>
+      <%= resume.phone %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Linked In: </strong>
+      <%= resume.linkedin %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Github Link: </strong>
+      <%= resume.github %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Address: </strong>
+      <%= resume.address %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Educational Qualifications: </strong>
+      <%= resume.educational_qualifications %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Skills: </strong>
+      <%= resume.skills %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Cirtificates: </strong>
+      <%= resume.cirtificates %>
+    </p>
+
+    <p class="my-2 py-3">
+      <strong class="block font-medium mb-1">Projects: </strong>
+      <%= resume.projects %>
+    </p>
+
+    <p class="my-2 py-4">
+      <strong class="block font-medium mb-1">Experience: </strong>
+      <%= resume.experience %>
+    </p>
+
+    <% if action_name != "show" %>
+      <%= link_to "Show this resume", resume, class: " btn btn-secondary rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to 'Edit this resume', edit_resume_path(resume), class: "btn btn-secondary rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+      <hr class="mt-6">
+    <% end %>
+  </div>
+<% end %>
